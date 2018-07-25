@@ -3,12 +3,13 @@
 import hashlib
 import json
 import itertools
+import sys
 from time import sleep
 
 from selenium import webdriver
 from selenium.common import exceptions
 
-GSCHOLAR_URL = "https://scholar.google.com/citations?user=BINSaTEAAAAJ"
+GSCHOLAR_URL = ""
 SLEEP_SEC = 2  # Change this to a larger number if your Internet connection is slow.
 
 
@@ -190,6 +191,11 @@ def sort_citation_objects(authors):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("usage: gscholar.py [GScholar URL]")
+        exit(-1)
+    else:
+        GSCHOLAR_URL = sys.argv[1]
     papers = extract_papers()
 
     for paper_id, paper in enumerate(papers):

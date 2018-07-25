@@ -33,7 +33,7 @@ Then, please clone the repo, install all required packages, and run the script.
 git clone https://github.com/bxshi/WhoCitedMe.git
 cd WhoCitedMe
 pip install selenium
-python3 gscholar.py
+python3 gscholar.py GSCHOLAR_URL
 ```
 
 Enjoy :)
